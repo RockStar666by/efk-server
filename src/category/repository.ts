@@ -1,4 +1,5 @@
 import { Category } from './category';
+import { db } from '../myDatabase';
 
 const categories: Category[] = [
   {
@@ -12,12 +13,15 @@ const categories: Category[] = [
   },
 ];
 
+const arrCat = db.get('categories') as Array<[]>;
+
 export function getCategories(): Promise<Category[]> {
   return Promise.resolve<Category[]>(categories);
 }
 
-export function getCategoryById(categoryId: number): Promise<Category | undefined> {
-  return Promise.resolve(categories.find((cat) => cat.id === categoryId));
+export function getCategoryById(categoryId: number): Promise<[]> {
+  console.log(arrCat);
+  return Promise.resolve(arrCat[categoryId]);
 }
 
 export function createCategory(category: Category): Promise<Category> {
@@ -34,12 +38,11 @@ export function createCategory(category: Category): Promise<Category> {
 }
 
 export function deleteCategory(id: number): Promise<void> {
-  const index = categories.findIndex((cat) => cat.id === id);
-
-  if (index < 0) {
+  if (Number(id) < 0) {
     Promise.reject(new Error('Category not found'));
   }
-
-  categories.splice(index, 1);
+  arrCat.splice(id, 1);
+  db.set('categories', arrCat);
+  console.log(arrCat);
   return Promise.resolve();
 }

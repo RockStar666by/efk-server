@@ -1,4 +1,3 @@
-import console from 'console';
 import { db } from '../myDatabase';
 import { Item } from './item';
 

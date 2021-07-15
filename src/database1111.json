@@ -1,14 +1,5 @@
 {
-  "categories": [
-    "Action (set A)",
-    "Action (set B)",
-    "Sports",
-    "Fruits",
-    "Animal (set A)",
-    "Animal (set B)",
-    "Clothes",
-    "Emotions"
-  ],
+  "categories": ["Action (set A)", "Action (set B)", "Sports", "Fruits", "Animal (set A)", "Animal (set B)", "Clothes", "Emotions"],
   "items": [
     [
       {

@@ -42,9 +42,6 @@ router.post('/', async (req, res) => {
 // Delete category
 router.delete('/:id', async (req, res) => {
   const categoryId = Number(req.params.id);
-  if (!categoryId) {
-    return res.status(StatusCodes.BadRequest);
-  }
   try {
     await deleteCategory(categoryId);
     return res.sendStatus(StatusCodes.Ok);
