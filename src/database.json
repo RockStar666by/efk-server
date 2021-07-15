@@ -1,0 +1,22 @@
+{
+  "items": [
+    [
+      {
+        "category": "Action (set A)",
+        "word": "cry",
+        "translation": "плакать",
+        "image": "img/cry.jpg",
+        "audioSrc": "audio/cry.mp3"
+      }
+    ],
+    [
+      {
+        "category": "Action (set B)",
+        "word": "swim",
+        "translation": "плавать",
+        "image": "img/swim.jpg",
+        "audioSrc": "audio/swim.mp3"
+      }
+    ]
+  ]
+}
